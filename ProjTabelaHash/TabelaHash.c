@@ -4,9 +4,9 @@
 //#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "TabelaHash.h" //inclui os Protótipos
+#include "TabelaHash.h" //inclui os Protï¿½tipos
 
-//Definição do tipo Hash
+//Definiï¿½ï¿½o do tipo Hash
 struct hash{
     int qtd, TABLE_SIZE;
     struct aluno **itens;
@@ -69,7 +69,7 @@ int chaveDobra(int chave, int TABLE_SIZE){
 }
 
 //==============================================
-//Hash Multiplicação
+//Hash Multiplicaï¿½ï¿½o
 //int chave = valorString(nome);
 //pos = chaveDobra(chave, TABLE_SIZE)
 int chaveMultiplicacao(int chave, int TABLE_SIZE){
@@ -80,7 +80,7 @@ int chaveMultiplicacao(int chave, int TABLE_SIZE){
 }
 
 //==============================================
-// Insere e busca sem tratamento de colisão
+// Insere e busca sem tratamento de colisï¿½o
 //==============================================
 int insereHash_SemColisao(Hash* ha, struct aluno al){
     if(ha == NULL || ha->qtd == ha->TABLE_SIZE)
@@ -113,7 +113,7 @@ int buscaHash_SemColisao(Hash* ha, int mat, struct aluno* al){
 
 
 //==============================================
-// Insere e busca com tratamento de colisão: Endereçamento Aberto
+// Insere e busca com tratamento de colisï¿½o: Endereï¿½amento Aberto
 //==============================================
 int sondagemLinear(int pos, int i, int TABLE_SIZE){
     return ((pos + i) & 0x7FFFFFFF) % TABLE_SIZE;
@@ -157,11 +157,11 @@ int insereHash_EnderAberto(Hash* ha, struct aluno al){
 }
 
 int buscaHash_EnderAberto(Hash* ha, int mat, struct aluno* al){
-    if(ha == NULL)
-        return 0;
+    if(ha == NULL) 
+        return 0; 
 
     int i, pos, newPos;
-    pos = chaveDivisao(mat,ha->TABLE_SIZE);
+    pos = chaveDivisao(mat,ha->TABLE_SIZE); 
     for(i=0; i < ha->TABLE_SIZE; i++){
         newPos = sondagemLinear(pos,i,ha->TABLE_SIZE);
         //newPos = sondagemQuadratica(pos,i,ha->TABLE_SIZE);
